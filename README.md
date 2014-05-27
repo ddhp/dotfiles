@@ -1,6 +1,6 @@
-## Dotfiles
+# Dotfiles
 
-# Include 
-.bashrc
-.bash_aliases
-.vimrc
+## Include 
+- .bashrc
+- .bash_aliases
+- .vimrc
