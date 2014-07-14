@@ -1,6 +1,6 @@
 # load .bash_aliases if exists
-if [ -f ~/.bash_aliases ]; then
-. ~/.bash_aliases
+if [ -f /.bash_aliases ]; then
+. /.bash_aliases
 fi
 
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
