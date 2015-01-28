@@ -23,12 +23,13 @@ Bundle 'gmarik/vundle'
 " My bundles below
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" front-end plugins, coffeescript, less and jst (ejs) templates
+" front-end plugins, coffeescript, less, sass and jst (ejs) templates
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'groenewege/vim-less'
 Bundle 'briancollins/vim-jst'
+Bundle 'cakebaker/scss-syntax.vim'
 
-
+" for comment code 
 Bundle 'tomtom/tcomment_vim'
 Bundle 'git://github.com/scrooloose/nerdtree'
 Bundle 'git://github.com/rbgrouleff/bclose.vim'
@@ -38,8 +39,9 @@ Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 Bundle 'honza/vim-snippets'
 Bundle 'garbas/vim-snipmate'
+Bundle 'othree/javascript-libraries-syntax.vim'
 
-"Tim Pope is the man !
+" Tim Pope is the man !
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
@@ -47,13 +49,16 @@ Bundle 'tpope/vim-repeat'
 " fuzzy finder, best plugin for file ever !
 Bundle 'git://github.com/kien/ctrlp.vim' 
 
+" autocomplete
+" Bundle "git://github.com/Valloric/YouCompleteMe.git"
+
 " a bazillion of colorscheme
 Bundle 'flazz/vim-colorschemes'
 
 " hack to get 'correct' colors on vim terminal
 Bundle 'vim-scripts/CSApprox'
 
-"fancy status line
+" fancy status line
 Bundle  'Lokaltog/vim-powerline'
 set t_Co=256
 "let g:Powerline_symbols='unicode'
@@ -185,10 +190,17 @@ imap <F7> <c-o>:w <bar> CoffeeMake -b<CR>
 au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
 
 """""""" CtrlP
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip
-"let g:ctrlp_custom_ignore = 'node_modules\|git\|target\|bin\/src'
+" set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+set wildignore+=*.so,*.swp,*.zip
+let g:ctrlp_custom_ignore = 'node_modules\|git\|target\|bin\/src'
 let g:ctrlp_working_path_mode = 'ra'
 " let g:ctrlp_map = '<leader>p'
 noremap <leader>p :CtrlP .<cr>
 noremap <c-p> :CtrlP .<cr>
 let g:ctrlp_root_markers = ['.git, .svn']
+let g:ctrlp_show_hidden = 1
+
+" enable tpope-repeat
+silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
+
+set synmaxcol=250
