@@ -3,12 +3,9 @@ alias chromeCrossD="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chro
 alias gr="grunt"
 alias hisgrep="history | grep -i"
 alias gspresp="git stash && git pull --rebase && git stash pop"
-alias ls="ls -GF"
-alias grep="grep --color=auto -inH"
-alias ll="ls -al"
 
 /* replace vim with macvim */
-alias vim="mvim -v"
+/* alias vim="mvim -v" */
 
 /* git aliases */
 alias gs='git status '
@@ -23,3 +20,8 @@ alias gx='gitx --all'
 
 alias got='git '
 alias get='git '
+
+# php-fpm aliases
+alias php-fpm.start="launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.php55.plist"
+alias php-fpm.stop="launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php55.plist"
+alias php-fpm.restart='php-fpm.stop && php-fpm.start'
