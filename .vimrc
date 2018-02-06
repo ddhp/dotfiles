@@ -1,147 +1,147 @@
-" to get vundle: git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-set nocompatible               " be iMproved
-filetype off                   " required!
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-" Setting up Vundle - the vim plugin bundler (inspired from github's fisadev/fisa-vim-config)
-let iCanHazVundle=1
-let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
-if !filereadable(vundle_readme)
-    echo "Installing Vundle..."
-    echo ""
-    silent !mkdir -p ~/.vim/bundle
-    silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
-    let iCanHazVundle=0
-endif
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle
-" required! 
-Bundle 'gmarik/vundle'
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" My bundles below
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
+" plugin from http://vim-scripts.org/vim/scripts.html
+" Plugin 'L9'
+" git repos on your local machine (i.e. when working on your own plugin)
+" Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Install L9 and avoid a Naming conflict if you've already installed a
+" different version somewhere else.
+" Plugin 'ascenator/L9', {'name': 'newL9'}
 
-" front-end plugins, coffeescript, less, sass and jst (ejs) templates
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'groenewege/vim-less'
-Bundle 'briancollins/vim-jst'
-Bundle 'cakebaker/scss-syntax.vim'
+Plugin 'altercation/vim-colors-solarized'
 
-" for comment code 
-Bundle 'tomtom/tcomment_vim'
-Bundle 'git://github.com/scrooloose/nerdtree'
-Bundle 'git://github.com/rbgrouleff/bclose.vim'
-
-" Fork of vim-snipmate - dependencies
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
-Bundle 'honza/vim-snippets'
-Bundle 'garbas/vim-snipmate'
-Bundle 'othree/javascript-libraries-syntax.vim'
-
-" Tim Pope is the man !
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-repeat'
+"""""""""""""""""
+" Tern settings
+"""""""""""""""""
+Plugin 'marijnh/tern_for_vim'
+" show argument hints
+let g:tern_show_argument_hints='on_hold'
+" enable keyboard shortcuts 
+let g:tern_map_keys=1
 
 " fuzzy finder, best plugin for file ever !
-Bundle 'git://github.com/kien/ctrlp.vim' 
+" usage: https://github.com/kien/ctrlp.vim#basic-usage
+Plugin 'git://github.com/kien/ctrlp.vim'
+let g:ctrlp_working_path_mode = 'ra'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+let g:ctrlp_custom_ignore = 'node_modules\|git\|dist\|bin' " set up your custom ignore
 
-" autocomplete
-" Bundle "git://github.com/Valloric/YouCompleteMe.git"
+" provides syntax highlighting and improved indentation.
+Plugin 'pangloss/vim-javascript'
+let g:javascript_plugin_jsdoc = 1
+Plugin 'mxw/vim-jsx'
+let g:jsx_ext_required = 0
 
-" a bazillion of colorscheme
-Bundle 'flazz/vim-colorschemes'
-
-" hack to get 'correct' colors on vim terminal
-Bundle 'vim-scripts/CSApprox'
+" snippet
+" doc: https://github.com/grvcoelho/vim-javascript-snippets#flow
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'grvcoelho/vim-javascript-snippets' " for javascript
 
 " fancy status line
-Bundle  'Lokaltog/vim-powerline'
-set t_Co=256
-"let g:Powerline_symbols='unicode'
-" let g:Powerline_symbols='fancy'
+Plugin  'Lokaltog/vim-powerline'
 set laststatus=2   " Always show the statusline
 set encoding=utf-8 " Necessary to show Unicode glyphs
 
-"Make backspace work
-set backspace=indent,eol,start
+" for comment code 
+Plugin 'tomtom/tcomment_vim'
 
-" Handlebars
-Bundle 'git://github.com/juvenn/mustache.vim.git'
-Bundle 'git://github.com/nono/vim-handlebars.git'
+" nerd tree
+Plugin 'git://github.com/scrooloose/nerdtree'
+map <C-n> :NERDTreeToggle<CR> " NERDtree hotkey
 
-" IndentLine
-Bundle 'Yggdroot/indentLine'
+" CAUTION: apple compile vim without -conceal by default
+" you need to install vim with homebrew
+" https://github.com/Yggdroot/indentLine/issues/59
+Plugin 'Yggdroot/indentLine'
 
-" Installing plugins the first time
-if iCanHazVundle == 0
-    echo "Installing Bundles, please ignore key map error messages"
-    echo ""
-    :BundleInstall
-endif
-
-filetype plugin indent on     " required! (vundle)
-syntax on
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " personal vimrc config
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set encoding=utf-8
+" setting color path if using vundle
+" https://github.com/altercation/vim-colors-solarized/issues/104#issuecomment-117059059
+let g:solarized_termcolors=256
+set rtp+=~/.vim/bundle/vim-colors-solarized
+syntax enable
+set background=dark
+colorscheme solarized
 
-"""""""" CSApprox plugin
-" IMPORTANT: Uncomment one of the following lines to force
-" using 256 colors (or 88 colors) if your terminal supports it,
-" but does not automatically use 256 colors by default.
-set t_Co=256
-"set t_Co=88
-let g:CSApprox_attr_map = { 'bold' : 'bold', 'italic' : '', 'sp' : '' }
-colorscheme darkocean
-
-set gfn=Monaco:h14
-
-"NERDtree hotkey
-map <C-n> :NERDTreeToggle<CR>
-
-"copy from system clipboard with p
-"yank and allow to paste from system clipboard in other application
+" copy from system clipboard with p
+" yank and allow to paste from system clipboard in other application
+" CAUTION: run `brew install vim` to have +clipboard for this to work
 set clipboard=unnamed
 
-"disable creation of .swp files
+" disable creation of .swp files
 set noswapfile
 
-"set the terminal title
+" set the terminal title
 set title
 
-"Display line number on the left
+" Display line number on the left
 set number
 
-"in an xterm, allow the use of the mouse
-set mouse=a
+"search is case insensitive. If the search pattern contains
+"upper case letter, then it's case sensitive
+set ignorecase
+set smartcase
 
-"showmatch: Show the matching bracket for the last ')'?
-set showmatch
+" Treat long lines as break lines (useful when moving around them)
+map j gj
+map k gk
 
-" treat numerals as decimal instead of octals (practical vim tip11)
-set nrformats=
+"""" For search
+"highlight search results
+set hlsearch
 
-"causes left and right arrow to change line when reaching the end/beginning
-"< and > for normal mode, [ and ] for insert mode
-set whichwrap+=<,>,[,]
+"to clear highlight search with F5
+nnoremap <F5> :let @/ = ""<CR>
 
-" Tell vim to remember certain things when we exit
-"  '10  :  marks will be remembered for up to 10 previously edited files
-"  "100 :  will save up to 100 lines for each register
-"  :20  :  up to 20 lines of command-line history will be remembered
-"  %    :  saved restores the buffer list
-"  n... :  where to save the viminfo files
-set viminfo='10,\"100,:20,n~/.viminfo
+"clear higlight search when opening a file
+"the last search is remembered in viminfo
+"and I didn't find a way to disable that
+autocmd BufNewFile,BufReadPost *  let @/ = ""
 
-" Get back to last position.
-autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+"set window to fullscreen
+set lines=999 columns=999
 
+"Make backspace work
+set backspace=indent,eol,start
+
+""""""" Indent
 "set indentation to 2 spaces
 set shiftwidth=2
 
@@ -152,55 +152,10 @@ set tabstop=2
 "always paste with respect to indentation
 nnoremap p ]p
 
-"highlight search results
-set hlsearch
+"causes left and right arrow to change line when reaching the end/beginning
+"< and > for normal mode, [ and ] for insert mode
+set whichwrap+=<,>,[,]
 
-"set window to fullscreen
-set lines=100 columns=400
-
-"to clear highlight search
-nnoremap <F5> :let @/ = ""<CR>
-
-"clear higlight search when opening a file
-"the last search is remembered in viminfo
-"and I didn't find a way to disable that
-autocmd BufNewFile,BufReadPost *  let @/ = ""
-
-" Treat long lines as break lines (useful when moving around them)
-map j gj
-map k gk
-
-"folding
-" set foldmethod=syntax
-" set foldcolumn=1
-
-"search is case insensitive. If the search pattern contains
-"upper case letter, then it's case sensitive
-set ignorecase
-set smartcase
-
-"""""""" coffeescript
-"map <F6> to save and compile the file
-noremap <leader>cm :w <bar> CoffeeMake<CR>
-inoremap <leader>cm <esc>:w <bar> CoffeeMake<CR>
-
-"map <F7> to save and compile the file in bare mode
-nmap <F7> :w <bar> CoffeeMake -b<CR>
-imap <F7> <c-o>:w <bar> CoffeeMake -b<CR>
-au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
-
-"""""""" CtrlP
-" set wildignore+=*/tmp/*,*.so,*.swp,*.zip
-set wildignore+=*.so,*.swp,*.zip
-let g:ctrlp_custom_ignore = 'node_modules\|git\|target\|bin\/src'
-let g:ctrlp_working_path_mode = 'ra'
-" let g:ctrlp_map = '<leader>p'
-noremap <leader>p :CtrlP .<cr>
-noremap <c-p> :CtrlP .<cr>
-let g:ctrlp_root_markers = ['.git, .svn']
-let g:ctrlp_show_hidden = 1
-
-" enable tpope-repeat
-silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
-
-set synmaxcol=250
+""""""" Folding
+set foldmethod=indent
+set foldlevelstart=2
