@@ -34,3 +34,4 @@ Set git
 - git config --global alias.co checkout
 - git config --global alias.st status
 - git config --global alias.c commit
+- set sourcetree commandline tools `ln -s /Applications/SourceTree.app/Contents/Resources/stree /usr/local/bin/`
