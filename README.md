@@ -17,6 +17,7 @@ and follow the instruction in it
 
 ### Vim
 
+- `brew install --build-from-source vim` for yanked from clipboard and indent line
 - Install [vundle](https://github.com/VundleVim/Vundle.vim#quick-start)
 - Install [pathogen](https://github.com/tpope/vim-pathogen#installation)
 - Install tern https://gist.github.com/nisaacson/9234157
