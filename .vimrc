@@ -74,6 +74,25 @@ map <C-n> :NERDTreeToggle<CR> " NERDtree hotkey
 " https://github.com/Yggdroot/indentLine/issues/59
 Plugin 'Yggdroot/indentLine'
 
+" Syntax plugin
+Plugin 'vim-syntastic/syntastic'
+Plugin 'mtscout6/syntastic-local-eslint.vim'
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exe = 'npx eslint --fix'
+
+" Ctrl-w + e shall enable checking
+" Ctrl-w + f shall toggle mode
+noremap <C-w>e :SyntasticCheck<CR>
+noremap <C-w>f :SyntasticToggleMode<CR>
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
