@@ -34,4 +34,5 @@ Set git
 - git config --global alias.co checkout
 - git config --global alias.st status
 - git config --global alias.c commit
+- copy alias commands to `~/.gitconfig`
 - set sourcetree commandline tools `ln -s /Applications/SourceTree.app/Contents/Resources/stree /usr/local/bin/`
