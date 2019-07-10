@@ -17,6 +17,7 @@ and follow the instruction in it
 
 ### Vim
 
+- copy `.tern-project` to `~/`
 - `brew install --build-from-source vim` for yanked from clipboard and indent line
 - Install [vundle](https://github.com/VundleVim/Vundle.vim#quick-start)
 - Install [pathogen](https://github.com/tpope/vim-pathogen#installation)
@@ -28,7 +29,7 @@ and follow the instruction in it
 
 - Install node.js
 - Set ssh key for github
-Set git 
+Set git
 - git config --global user.name ddhp
 - git config --global user.email jessechen.jcc@gmail.com
 - git config --global alias.co checkout

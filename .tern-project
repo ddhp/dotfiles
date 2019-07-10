@@ -1,0 +1,16 @@
+{
+    "libs": [
+        "browser",
+        "react",
+        "underscore"
+    ],
+    "loadEagerly":[
+    ],
+    "dontLoad": [],
+    "plugins": {
+      "angular": {},
+      "doc_comment": null,
+      "es_modules": {},
+      "node": {}
+    }
+}
