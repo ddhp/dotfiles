@@ -171,18 +171,18 @@ nnoremap <F5> :let @/ = ""<CR>
 autocmd BufNewFile,BufReadPost *  let @/ = ""
 
 "set window to fullscreen
-set lines=999 columns=999
+set lines=300 columns=300
 
 "Make backspace work
 set backspace=indent,eol,start
 
 """"""" Indent
 "set indentation to 2 spaces
-set shiftwidth=2
+set shiftwidth=4
 
 "replace <tab> by spaces
 set expandtab
-set tabstop=2
+set tabstop=4
 
 "always paste with respect to indentation
 nnoremap p ]p
@@ -193,7 +193,7 @@ set whichwrap+=<,>,[,]
 
 """"""" Folding
 set foldmethod=indent
-set foldlevelstart=2
+set foldlevelstart=4
 
 set mouse=a
 

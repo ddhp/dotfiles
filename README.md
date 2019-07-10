@@ -17,6 +17,7 @@ and follow the instruction in it
 
 ### Vim
 
+- install `brew install cmake`(for YouCompleteMe)
 - copy `.tern-project` to `~/`
 - `brew install --build-from-source vim` for yanked from clipboard and indent line
 - Install [vundle](https://github.com/VundleVim/Vundle.vim#quick-start)
