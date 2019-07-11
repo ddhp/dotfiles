@@ -181,11 +181,11 @@ set backspace=indent,eol,start
 
 """"""" Indent
 "set indentation to 2 spaces
-set shiftwidth=4
+set shiftwidth=2
 
 "replace <tab> by spaces
 set expandtab
-set tabstop=4
+set tabstop=2
 
 "always paste with respect to indentation
 nnoremap p ]p
@@ -196,7 +196,7 @@ set whichwrap+=<,>,[,]
 
 """"""" Folding
 set foldmethod=indent
-set foldlevelstart=4
+set foldlevelstart=2
 
 set mouse=a
 
