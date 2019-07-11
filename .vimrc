@@ -39,7 +39,10 @@ let g:tern_map_keys=1
 
 " remember to setup your ~/.tern-project
 " see https://github.com/tststs/atom-ternjs
-Plugin 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer --ts-completer' }
+Plugin 'Valloric/YouCompleteMe'
+" need to compile manually
+" see https://github.com/ycm-core/YouCompleteMe#installation
+" ./install.py --tern-completer --ts-completer
 "" Don't show YCM's preview window [ I find it really annoying ]
 set completeopt-=preview
 let g:ycm_add_preview_to_completeopt = 0
