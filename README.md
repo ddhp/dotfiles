@@ -9,7 +9,7 @@ and follow the instruction in it
 ### ZSH
 
 - Install [homebrew and git](https://gist.github.com/derhuerst/1b15ff4652a867391f03#file-mac-md)
-- Install [solarized theme](https://github.com/tomislav/osx-terminal.app-colors-solarized) on osx
+- Install [solarized theme for terminal](https://github.com/altercation/solarized/tree/master/osx-terminal.app-colors-solarized)
 - Install [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh#getting-started) and [power-line-fonts](https://github.com/powerline/fonts)
 - Set [theme](https://github.com/robbyrussell/oh-my-zsh#selecting-a-theme)
 - Set Declared terminal as xterm-256color
@@ -18,6 +18,7 @@ and follow the instruction in it
 ### Vim
 
 - install `brew install cmake`(for YouCompleteMe)
+- install [solarized](https://github.com/altercation/solarized/tree/master/vim-colors-solarized) for vim
 - copy `.tern-project` to `~/`
 - `brew install --build-from-source vim` for yanked from clipboard and indent line
 - Install [vundle](https://github.com/VundleVim/Vundle.vim#quick-start)
